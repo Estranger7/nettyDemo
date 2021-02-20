@@ -48,16 +48,9 @@ public class SimpleChatServer {
                     });
 
             System.out.println("SimpleChatServer 启动了");
-            //
+
             ChannelFuture future = b.bind(port).sync();
-
-            //控制台输入文字，刷入通道中
-            BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-            while(true){
-                future.channel().writeAndFlush(in.readLine() +"\r\n");
-            }
-
-//            future.channel().closeFuture().sync();
+            future.channel().closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();
             workGroup.shutdownGracefully();
