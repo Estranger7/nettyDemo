@@ -1,4 +1,4 @@
-package com.gkoudai.www.websocket;
+package com.gkoudai.www.webSocket;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
